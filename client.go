@@ -7,8 +7,8 @@ type SockerClient struct {
 	index    int
 }
 
-func NewClient() SockerClient {
-	return SockerClient{}
+func NewClient() *SockerClient {
+	return &SockerClient{}
 }
 
 // Advance the state to the next handler

@@ -68,7 +68,7 @@ func websocketFunc(w http.ResponseWriter, r *http.Request) {
 
 	})
 
-	server.Register <- &connection
+	server.Register <- connection
 
 	go connection.ReadPump()
 	go connection.WritePump()

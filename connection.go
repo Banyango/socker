@@ -20,8 +20,8 @@ type SockerClientConnection struct {
 	doneCh             chan bool
 }
 
-func NewClientConnection(connection *websocket.Conn) SockerClientConnection {
-	return SockerClientConnection{
+func NewClientConnection(connection *websocket.Conn) *SockerClientConnection {
+	return &SockerClientConnection{
 		Connection:connection,
 		inboundTCPChannel:make(chan []byte),
 		outboundTCPChannel:make(chan []byte),
