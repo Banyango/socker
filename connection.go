@@ -30,7 +30,7 @@ func NewClientConnection(connection *websocket.Conn) SockerClientConnection {
 }
 
 // Advance the state to the next handler
-// panics if out of range.
+// returns err if out of range.
 // Advance the state to the next handler
 // panics if out of range.
 func (c *SockerClientConnection) Next() error {
