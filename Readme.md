@@ -1,3 +1,4 @@
+![logo](./site/logo.png)
 # Socker
 
 A lib for doing client/server state logic using websockets.
