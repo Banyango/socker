@@ -23,7 +23,7 @@ ___
 |Server gets handshake and sends webrtc data | |
 | | Client sets up webrtc connection and sends back webrtc info|
 | Server sets remoteDescription from the client| |
-| **Server listens on webrtc data channel for data** | **Client sends data over webrtc connection** |
+| **Server listens for further websocket data** | **Client sends websocket data** |
 
 
 ___
@@ -53,7 +53,8 @@ connection.Add(func(message []byte) bool {
 })
 
 connection.Add(func(message []byte) bool {
-    // handle client inputs (in authoritative game server model)
+    // Done setting up connection
+    // Can use this for any client data that needs to make sure it gets to server. (Disconnect, Some kind of state)
     return false
 })
 
@@ -80,7 +81,7 @@ connection.Add(func(message []byte) bool {
 })
 
 connection.Add(func(message []byte) bool {
-    // handle server data messages (positions, state, etc)
+    // handle server data messages that must reach client. (A player disconnects, joins, etc)
     return false
 })
  ```
